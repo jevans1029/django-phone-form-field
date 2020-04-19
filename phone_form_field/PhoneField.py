@@ -94,7 +94,7 @@ class PhoneMultiWidget(MultiWidget):
 class PhoneForm(Form):
     """For the initial value of the Phone Field to work, your form must extend this form and pass the initial phone_number in the constructor
     in the format of a string, with or without the country code. """
-    def __init__(self, phone_number=None, *args, **kwargs):
+    def __init__(self, *args, phone_number=None, **kwargs):
         super().__init__(*args, **kwargs)
 
         self.fields["phone"] = PhoneField(label="Phone Number", initial=phone_number)
